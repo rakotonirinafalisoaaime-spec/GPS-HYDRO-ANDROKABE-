@@ -25,8 +25,11 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: '8.9'
-
+          gradle-version: '17'
+compileOptions {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
       - name: Extract project
         run: |
           unzip -q GPS_HYDRO_Androkabe_GitHubActions.zip -d project
